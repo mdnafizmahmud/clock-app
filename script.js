@@ -5,9 +5,11 @@ let ampmEl = document.getElementById("ampm");
 
 function startClock() {
   const date = new Date();
-  let h = date.getHours();
-  let m = date.getMinutes();
-  let s = date.getSeconds();
+  let h, m, s, ampm;
+  h = date.getHours();
+  m = date.getMinutes();
+  s = date.getSeconds();
+  ampm = "AM";
 
   if (h > 12) {
     h = h - 12;
