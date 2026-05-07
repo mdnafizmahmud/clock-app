@@ -5,15 +5,22 @@ let ampmEl = document.getElementById("ampm");
 
 function startClock() {
   const date = new Date();
-  let h, m, s, ampm;
-  h = date.getHours();
-  m = date.getMinutes();
-  s = date.getSeconds();
-  ampm = "AM";
+  let h = date.getHours();
+  let m = date.getMinutes();
+  let s = date.getSeconds();
+  let ampm = "AM";
+
+  if (h >= 12) {
+    ampm = "PM";
+  } else {
+    ampm = ampm;
+  }
 
   if (h > 12) {
-    h = h - 12;
-    ampm = "PM";
+    h -= 12;
+  }
+  if (h === 0) {
+    h = 12;
   }
 
   h = h < 10 ? "0" + h : h;
@@ -24,7 +31,7 @@ function startClock() {
   minutesEl.textContent = m;
   secondsEl.textContent = s;
   ampmEl.textContent = ampm;
-
-  setInterval(startClock, 1000);
 }
+
+setInterval(startClock, 1000);
 startClock();
