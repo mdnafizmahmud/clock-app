@@ -13,7 +13,7 @@ function startClock() {
   m = date.getMinutes();
   s = date.getSeconds();
   day = date.getDate();
-  month = date.getMonth();
+  month = date.getMonth() + 1;
   year = date.getFullYear();
   ampm = "AM";
 
